@@ -1,0 +1,200 @@
+/*
+.infocus.wrapper{
+    width: 100%;
+    padding: 100px 0;
+}
+
+.infocusImg{
+    margin-left: 100px;
+    width: 250px;
+}
+.runwayModels{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.runwayModels h1{
+    font-size: 40px;
+    font-weight: 500;
+    
+}
+
+.runwayModelsGrid{
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 100px;
+}
+
+.runwayModelsGrid .row1{
+    padding-left: 140px;
+}
+.runwayModelsGrid .row2{
+    padding-right: 140px;
+}
+
+.runwayModelsGrid .row1, .runwayModelsGrid .row2{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    min-height: 360px;
+    justify-items: start;
+}
+
+
+.runwayModelsGrid .row1 img, .runwayModelsGrid .row2 img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.runwayModelsItem{
+    position: relative;
+    overflow: hidden;
+    height: 360px !important;
+}
+
+/*Style for contact us panel*/
+/*
+.runwayModelsGrid .row2 .runwayModelsItem:last-child {
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+    margin-left: 40px;
+    margin-right: -140px;
+}
+
+.runwayModelsGrid .row2 .runwayModelsItem:last-child p {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/*Contact button style*/
+/*
+.runwayModelsGrid .row2 .runwayModelsItem:last-child button {
+    position: relative;
+    background-color: var(--bg);
+    color: var(--text);
+    border: 3px solid;
+    border-radius: 26px;
+    padding: 12px 24px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.4s ease;
+}
+
+.runwayModelsGrid .row2 .runwayModelsItem:last-child button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--text);
+    z-index: 0;
+    transition: width 0.4s ease;
+}
+
+.runwayModelsGrid .row2 .runwayModelsItem:last-child button:hover::before {
+    width: 100%;
+}
+
+.runwayModelsGrid .row2 .runwayModelsItem:last-child button span {
+    position: relative;
+    z-index: 1;
+}
+
+.runwayModelsGrid .row2 .runwayModelsItem:last-child button:hover span {
+    color: var(--bg);
+}
+
+.runwayModelsGrid .row2 .runwayModelsItem .buttonContainer{
+    width: 250px;
+}
+.runwayModelsGrid .row2 .runwayModelsItem .buttonContainer .buttonWrapper button:hover + img.icon{
+    transform: translate(0, -30px);
+    opacity: 1;
+}
+.runwayModelsGrid .row2 .runwayModelsItem .buttonWrapper{
+    display: flex;
+    justify-content: end;
+}
+.runwayModelsGrid .row2 .runwayModelsItem img.icon{
+
+    transform: translate(-30px, 0px);
+    height: 50px;
+    width: 50px;
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/*==================================================*/
+/*SKEW IMAGE STYLES*/
+/*
+.runwayModelsGrid .row1 .runwayModelsItem,.runwayModelsGrid .row2 .runwayModelsItem:not(:last-child){
+    z-index: 1;
+    transform: skewX(-20deg);
+    
+}
+
+.row1 .runwayModelsItem img{
+    transform: skewX(20deg) scale(1.8) translateY(80px) translateX(0px);
+    transition: transform 0.4s ease;
+}
+
+.row2 .runwayModelsItem img{
+    transform: skewX(20deg) scale(1.8) translateY(70px) translateX(0px);
+    transition: transform 0.4s ease;
+}
+
+.row1 .runwayModelsItem img:hover{
+    transform: skewX(20deg) scale(1.8) translateY(80px) translateX(-10px);
+}
+
+.row2 .runwayModelsItem img:hover{
+    transform: skewX(20deg) scale(1.8) translateY(70px) translateX(-10px);
+}
+
+/*STYLES FOR PERFORMERS SECTION*/
+/*
+.performers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+
+.performers h1{
+    font-size: 40px;
+    font-weight: 500;
+    padding: 100px 0;
+}
+.performers p{
+    font-size: 20px;
+    padding-bottom: 60px;
+}
+.performers .performersGrid{
+    display: flex;
+    gap: 90px;
+    padding: 0 288px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.performers .performersGrid .performersImageWrapper img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.4);
+}

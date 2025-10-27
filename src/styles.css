@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";  
+
+
+
+@layer utilities {
+  .container {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+@theme {
+  --breakpoint-sm: 360px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1600px;
+  --breakpoint-2xl: 2400px;
+}
+
+
+
+:root {
+  --bg: #ffffff;
+  --panel: #111217;
+  --text: #4d4d4d;
+  --muted: #707070;
+  --accent: #202020;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  font-size: 1.4rem;
+}
+
+.desktopNav a {
+
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0 10px;
+}
+
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+
+  background: var(--bg);
+}
+
+.nav nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/*NAVIGATION DROPDOWN STYLES*/
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown-arrow {
+    font-size: 0.8em;
+    transition: transform 0.2s ease;
+}
+
+.dropdown-arrow.open {
+    transform: rotate(-180deg);
+}
+
+.nav-submenu {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    background: var(--bg);
+    min-width: 150px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 1000;
+    padding: 0.5rem 0;
+}
+
+.nav-submenu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    white-space: nowrap;
+}
+
+.nav-submenu a:hover,
+.nav-submenu a.active {
+    background-color: var(--muted);
+    color: var(--bg) !important;
+}
+
+/*HAMBURGER MENU ENTRANCE*/
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.animate-slide-in {
+  animation: slide-in 0.5s ease-in-out forwards;
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+.animate-slide-out {
+  animation: slide-out 0.5s ease-in-out forwards;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-submenu {
+        position: static;
+        box-shadow: none;
+        background: transparent;
+        padding-left: 1rem;
+    }
+}
+/*==========================================*/
+
+
+.muted {
+  color: var(--muted);
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+}
+
+.btn-ghost {
+  display: inline-block;
+  border: 1px solid #2c2d35;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.6rem;
+}
+
+
+
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  text-align: center;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.footer .footerDetails{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.footer .footerIcons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.footer .footerContact{
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,132 @@
+/*
+:root {
+  --card-w: 340px;
+  --card-h: 360px;
+  --gap: 28px;
+}
+
+.modelsWrapper {
+  width: 100%;
+  padding: 100px 0;
+}
+
+.modelsImg {
+  margin-left: 100px;
+  width: 250px;
+}
+
+.textjoinus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.textjoinus h1 {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.textjoinus h2 {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.6;
+  padding: 0 120px;
+  margin-top: 20px;
+}
+
+.mrrModelsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 40px 100px;
+}
+
+.mrrModelsGrid .mrrRow {
+  display: grid;
+  grid-template-columns: repeat(4, var(--card-w));
+  column-gap: var(--gap);
+  padding-left: 60px;
+}
+
+.mrrModelCard {
+  width: var(--card-w);
+  height: var(--card-h);
+  overflow: hidden;
+  transform: skewX(-20deg);
+  cursor: pointer;
+  position: relative;
+}
+
+.mrrModelCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: skewX(20deg) scale(1.5) translateY(10%);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.mrrModelCard:hover img {
+  transform: skewX(20deg) scale(1.4) translateY(12%);
+}
+
+
+@media (max-width: 1100px) {
+  :root { 
+    --card-w: 300px; 
+    --card-h: 320px; 
+  }
+  .mrrModelsGrid .mrrRow {
+    grid-template-columns: repeat(3, var(--card-w));
+  }
+}
+
+@media (max-width: 760px) {
+  :root { 
+    --card-w: 240px; 
+    --card-h: 280px; 
+  }
+  .mrrModelsGrid .mrrRow {
+    grid-template-columns: repeat(2, var(--card-w));
+    justify-content: center;
+    padding-left: 0;
+  }
+  .mrrModelsGrid { 
+    padding: 24px; 
+    gap: 28px; 
+  }
+  .textjoinus h2 {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 460px) {
+  :root { 
+    --card-w: 100%; 
+    --card-h: 220px; 
+  }
+  .mrrModelsGrid .mrrRow {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-left: 0;
+  }
+  .mrrModelsGrid { 
+    padding: 16px; 
+  }
+  .mrrModelCard {
+    width: 100%;
+  }
+  .textjoinus h1 {
+    font-size: 32px;
+  }
+  .textjoinus h2 {
+    font-size: 16px;
+    padding: 0 20px;
+  }
+  .modelsImg {
+    margin-left: 20px;
+    width: 200px;
+  }
+}
