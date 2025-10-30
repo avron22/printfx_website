@@ -1,121 +1,161 @@
-import "./Mainboard.css";
+import { Image, DollarSign, BarChart3, Rocket } from 'lucide-react';
 
-const Mainboard = () => {
-    return (
-        <>
-        <div className="min-h-[80vh] flex flex-col overflow-hidden! justify-center w-full m-0 py-25">
-            {/* TOP SECTION - KIDS */}
-            <section className="sm:overflow-x-auto sm:ml-0 md:overflow-x-visible  gap-0! justify-center!">
-                <div className="relative sm:flex-nowrap sm:max-md:overflow-x-auto flex flex-row md:min-w-[100%] md:px-10 md:justify-center gap-0
-                sm:[&::-webkit-scrollbar]:hidden sm:[-ms-overflow-style:none] sm:[scrollbar-width:none]">
-                    <button className="sm:max-md:flex sm:max-md:relative sm:ml-5 left-0 md:ml-[3vw] absolute text-5xl border-none bg-transparent font-extrabold mt-[20px] cursor-pointer z-[1000]"><a href="https://manilarunwayrepublic.com/models/kids">KIDS</a></button>
-                    {/* Kids Text Left */}
-                    <div className="md:justify-end sm:w-[100px] sm:max-md:ml-[-200px] sm:flex-shrink-0 sm:h-[300px] md:w-[10%] md:max-lg:pb-[5%] md:max-lg:h-[250px] lg:max-xl:h-[400px] xl:h-[600px] 2xl:h-[700px] grid grid-rows-6 h-[400px]  z-[-1]">
-                        <img className="sm:w-20 sm:max-md:translate-x-[60px] md:max-lg:translate-x-[0px] lg:max-xl:w-25 lg:max-xl:translate-x-[10px] xl:w-40 xl:translate-x-[40px]" src="./src/assets/kidsText.png" alt="" />
-                        <img className="sm:w-20 sm:max-md:translate-x-[40px] md:max-lg:translate-x-[-10px] lg:max-xl:w-25 lg:max-xl:translate-x-[-10px] xl:w-40 xl:translate-x-[-10px]" src="./src/assets/kidsText.png" alt="" />
-                        <img className="sm:w-20 sm:max-md:translate-x-[20px] md:max-lg:translate-x-[-30px] lg:max-xl:w-25 lg:max-xl:translate-x-[-30px] xl:w-40 xl:translate-x-[-60px]" src="./src/assets/kidsText.png" alt="" />
-                        <img className="sm:w-20 sm:max-md:translate-x-[0px] md:max-lg:translate-x-[-50px] lg:max-xl:w-25 lg:max-xl:translate-x-[-50px] xl:w-40 xl:translate-x-[-110px]" src="./src/assets/kidsText.png" alt="" />
-                        <img className="sm:w-20 sm:max-md:translate-x-[-20px] md:max-lg:translate-x-[-70px] lg:max-xl:w-25 lg:max-xl:translate-x-[-70px] xl:w-40 xl:translate-x-[-160px]" src="./src/assets/kidsText.png" alt="" />
-                        <img className="sm:w-20 sm:max-md:translate-x-[-40px] md:max-lg:translate-x-[-90px] lg:max-xl:w-25 lg:max-xl:translate-x-[-90px] xl:w-40 xl:translate-x-[-210px]" src="./src/assets/kidsText.png" alt="" />
-                    </div>
-                    
-                     {/* Kids Photos */}
-                    <div className="sm:w-[250px] sm:flex-shrink-0 md:w-[20%] opacity-0 animate-[fadeInDown_0.8s_ease-out_forwards]">
-                        <img className="md:max-lg:max-h[80%] h-[100%] object-cover overflow-visible grayscale transition-all duration-400 ease-in-out hover:grayscale-0 hover:-translate-y-2.5" 
-                            src="./src/assets/K1.1.png" 
-                            alt="Kid 1" 
-                        />
-                    </div>
-                    <div className="sm:w-[250px] sm:flex-shrink-0 md:w-[20%] opacity-0 animate-[fadeInDown_0.8s_ease-out_0.3s_forwards]">
-                        <img className="h-[100%] object-cover overflow-visible grayscale transition-all duration-400 ease-in-out hover:grayscale-0 hover:-translate-y-2.5"
-                             src="./src/assets/K2.1.png" 
-                             alt="Kid 2" 
-                        />
-                    </div>
-                    <div className="sm:w-[250px] sm:flex-shrink-0 md:w-[20%]  opacity-0 animate-[fadeInDown_0.8s_ease-out_0.6s_forwards]">
-                        <img className="h-[100%] object-cover overflow-visible grayscale transition-all duration-400 ease-in-out hover:grayscale-0 hover:-translate-y-2.5"
-                             src="./src/assets/K3.1.png" 
-                             alt="Kid 3" 
-                        />
-                    </div>
-                    <div className="sm:w-[250px] sm:flex-shrink-0 md:w-[20%] opacity-0 animate-[fadeInDown_0.8s_ease-out_0.9s_forwards]">
-                        <img className="h-[100%] object-cover overflow-visible grayscale transition-all duration-400 ease-in-out hover:grayscale-0 hover:-translate-y-2.5"
-                             src="./src/assets/K4.1.png" 
-                             alt="Kid 4" 
-                        />
-                    </div>
+// Testimonials Carousel Section
+<section className="w-full py-24 bg-gray-50 text-center">
+  <h2 className="text-3xl font-bold mb-4 max-md:text-2xl">
+    What People Say About Us
+  </h2>
+  <p className="text-gray-600 max-w-2xl mx-auto mb-10 max-md:px-4">
+    Hear from real clients who built their businesses with us.
+  </p>
 
-                    {/* Kids Text Right */}
-                    <div className="sm:w-[100px] sm:flex-shrink-0 md:w-[10%] sm:h-[300px]  md:max-lg:pb-[5%] md:max-lg:h-[250px] xl:max-2xl:right-5 lg:max-xl:ml-[60px] lg:max-xl:h-[400px] xl:h-[600px] 2xl:h-[700px] grid grid-rows-6 h-[400px] z-[-1] right-0">
-                        <img className="sm:w-20 sm:max-md:translate-x-[70px] md:max-lg:translate-x-[90px] lg:max-xl:w-25 lg:max-xl:translate-x-[40px] xl:w-40 xl:translate-x-[230px]" src="./src/assets/kidsText.png" alt="" />
-                        <img className="sm:w-20 sm:max-md:translate-x-[50px] md:max-lg:translate-x-[70px] lg:max-xl:w-25 lg:max-xl:translate-x-[20px] xl:w-40 xl:translate-x-[180px]" src="./src/assets/kidsText.png" alt="" />
-                        <img className="sm:w-20 sm:max-md:translate-x-[30px] md:max-lg:translate-x-[50px] lg:max-xl:w-25 lg:max-xl:translate-x-[0px] xl:w-40 xl:translate-x-[130px]" src="./src/assets/kidsText.png" alt="" />
-                        <img className="sm:w-20 sm:max-md:translate-x-[10px] md:max-lg:translate-x-[30px] lg:max-xl:w-25 lg:max-xl:translate-x-[-20px] xl:w-40 xl:translate-x-[80px]" src="./src/assets/kidsText.png" alt="" />
-                        <img className="sm:w-20 sm:max-md:translate-x-[-10px] md:max-lg:translate-x-[10px] lg:max-xl:w-25 lg:max-xl:translate-x-[-40px] xl:w-40 xl:translate-x-[30px]" src="./src/assets/kidsText.png" alt="" />
-                        <img className="sm:w-20 sm:max-md:translate-x-[-30px] md:max-lg:translate-x-[-10px] lg:max-xl:w-25 lg:max-xl:translate-x-[-60px] xl:w-40 xl:translate-x-[-20px]" src="./src/assets/kidsText.png" alt="" />
-                    </div>
-                </div>
-            </section>
-            {/* CENTER SECTION */}
-            <section className="w-full bg-[var(--accent)] text-[var(--bg)] text-center m-0 mt-[-50px] top-1/2 z-[1000]">
-                <h1 className="sm:text-4xl sm:py-5  md:text-[40px] lg:max-2xl:text-[76px] 2xl:text-[100px] font-medium">MANILA RUNWAY REPUBLIC MODELS</h1>
-            </section>
+  {/* Carousel Container */}
+  <div className="w-full flex justify-center items-center">
+    <div className="w-[90%] max-w-xl bg-white shadow-xl rounded-2xl p-8 flex flex-col items-center animate-slide-in">
+      <p className="text-gray-700 italic mb-6 text-lg text-center">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+      </p>
+      <img
+        src="https://via.placeholder.com/80"
+        className="rounded-full mb-3"
+        alt="User"
+      />
+      <h4 className="font-semibold text-gray-900">John Doe</h4>
+      <span className="text-blue-500 text-sm">CEO</span>
 
-            {/* BOTTOM SECTION - TEENS */}
-            <section className="sm:overflow-x-auto sm:ml-0 md:overflow-x-visible mt-[-50px]  gap-0! justify-center!">
-                <div className="relative sm:flex-nowrap sm:max-md:overflow-x-auto flex flex-row md:min-w-[100%] md:px-10 md:justify-center gap-0
-                sm:[&::-webkit-scrollbar]:hidden sm:[-ms-overflow-style:none] sm:[scrollbar-width:none]">
-                    <button className="sm:max-md:flex sm:max-md:relative sm:ml-5 left-0 md:ml-[3vw] absolute text-5xl border-none bg-transparent font-extrabold mt-[70px] cursor-pointer z-[1000]"><a href="https://manilarunwayrepublic.com/models/teens">TEENS</a></button>
-                    {/* Teens Text Left */}
-                    <div className="md:justify-end sm:w-[100px] sm:flex-shrink-0 md:w-[10%] sm:max-md:ml-[-200px] sm:h-[300px] md:max-lg:h-[250px] lg:max-xl:h-[400px] xl:h-[600px] 2xl:h-[700px] pt-[50px] grid grid-rows-6 h-[400px]  z-[-1]">
-                        <img className="sm:w-25 sm:max-md:translate-x-[20px] md:max-lg:translate-x-[0px] lg:max-xl:w-25 xl:w-35 lg:max-xl:translate-x-[0px] w-45 xl:translate-x-[-10px]" src="./src/assets/teensText.png" alt="" />
-                        <img className="sm:w-25 sm:max-md:translate-x-[0px] md:max-lg:translate-x-[-20px] lg:max-xl:w-25 xl:w-35 lg:max-xl:translate-x-[-20px] w-45 xl:translate-x-[-40px]" src="./src/assets/teensText.png" alt="" />
-                        <img className="sm:w-25 sm:max-md:translate-x-[-20px] md:max-lg:translate-x-[-40px] lg:max-xl:w-25 xl:w-35 lg:max-xl:translate-x-[-40px] w-45 xl:translate-x-[-70px]" src="./src/assets/teensText.png" alt="" />
-                        <img className="sm:w-25 sm:max-md:translate-x-[-40px] md:max-lg:translate-x-[-60px] lg:max-xl:w-25 xl:w-35 lg:max-xl:translate-x-[-60px] w-45 xl:translate-x-[-100px]" src="./src/assets/teensText.png" alt="" />
-                        <img className="sm:w-25 sm:max-md:translate-x-[-60px] md:max-lg:translate-x-[-80px] lg:max-xl:w-25 xl:w-35 lg:max-xl:translate-x-[-80px] w-45 xl:translate-x-[-130px]" src="./src/assets/teensText.png" alt="" />
-                        <img className="sm:w-25 sm:max-md:translate-x-[-80px] md:max-lg:translate-x-[-100px] lg:max-xl:w-25 xl:w-35 lg:max-xl:translate-x-[-100px] w-45 xl:translate-x-[-160px]" src="./src/assets/teensText.png" alt="" />
-                    </div>
+      {/* Dots */}
+      <div className="flex gap-2 mt-6">
+        <span className="w-2 h-2 bg-black rounded-full"></span>
+        <span className="w-2 h-2 bg-gray-300 rounded-full"></span>
+        <span className="w-2 h-2 bg-gray-300 rounded-full"></span>
+      </div>
+    </div>
+  </div>
+</section>
 
-                    {/* Teens Photos */}
-                    <div className="sm:w-[250px] sm:flex-shrink-0 md:w-[20%] opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]">
-                        <img className="h-[100%] object-cover overflow-visible grayscale transition-all duration-400 ease-in-out hover:grayscale-0 hover:translate-y-2.5"
-                             src="./src/assets/T1.1.png" 
-                             alt="Teen 1" 
-                        />
-                    </div>
-                    <div className="sm:w-[250px] sm:flex-shrink-0 md:w-[20%] opacity-0 animate-[fadeInUp_0.8s_ease-out_0.3s_forwards]">
-                        <img className="h-[100%] object-cover overflow-visible grayscale transition-all duration-400 ease-in-out hover:grayscale-0 hover:translate-y-2.5"
-                             src="./src/assets/T2.1.png" 
-                             alt="Teen 2" 
-                        />
-                    </div>
-                    <div className="sm:w-[250px] sm:flex-shrink-0 md:w-[20%] opacity-0 animate-[fadeInUp_0.8s_ease-out_0.6s_forwards]">
-                        <img className="h-[100%] object-cover overflow-visible grayscale transition-all duration-400 ease-in-out hover:grayscale-0 hover:translate-y-2.5"
-                             src="./src/assets/T3.1.png" 
-                             alt="Teen 3" 
-                        />
-                    </div>
-                    <div className="sm:w-[250px] sm:flex-shrink-0 md:w-[20%] opacity-0 animate-[fadeInUp_0.8s_ease-out_0.9s_forwards]">
-                        <img className="h-[100%] object-cover overflow-visible grayscale transition-all duration-400 ease-in-out hover:grayscale-0 hover:translate-y-2.5"
-                             src="./src/assets/T4.1.png" 
-                             alt="Teen 4" 
-                        />
-                    </div>
-                    
-                    {/* Teens Text Right */}
-                    <div className="sm:w-[100px] sm:flex-shrink-0 md:w-[10%] sm:h-[300px] md:max-lg:h-[250px] lg:max-xl:right-5 xl:max-2xl:right-10 lg:max-xl:h-[400px] xl:h-[600px] 2xl:h-[700px] pt-[50px] grid grid-rows-6 h-[400px] z-[-1] right-0">
-                        <img className="sm:w-25 sm:max-md:translate-x-[50px] md:max-lg:translate-x-[80px] lg:max-xl:w-25 xl:w-35 lg:max-xl:translate-x-[90px] w-45 xl:translate-x-[190px]" src="./src/assets/teensText.png" alt="" />
-                        <img className="sm:w-25 sm:max-md:translate-x-[30px] md:max-lg:translate-x-[60px] lg:max-xl:w-25 xl:w-35 lg:max-xl:translate-x-[70px] w-45 xl:translate-x-[140px]" src="./src/assets/teensText.png" alt="" />
-                        <img className="sm:w-25 sm:max-md:translate-x-[10px] md:max-lg:translate-x-[40px] lg:max-xl:w-25 xl:w-35 lg:max-xl:translate-x-[50px] w-45 xl:translate-x-[90px]" src="./src/assets/teensText.png" alt="" />
-                        <img className="sm:w-25 sm:max-md:translate-x-[-10px] md:max-lg:translate-x-[20px] lg:max-xl:w-25 xl:w-35 lg:max-xl:translate-x-[30px] w-45 xl:translate-x-[40px]" src="./src/assets/teensText.png" alt="" />
-                        <img className="sm:w-25 sm:max-md:translate-x-[-30px] md:max-lg:translate-x-[0px] lg:max-xl:w-25 xl:w-35 lg:max-xl:translate-x-[10px] w-45 xl:translate-x-[-10px]" src="./src/assets/teensText.png" alt="" />
-                        <img className="sm:w-25 sm:max-md:translate-x-[-50px] md:max-lg:translate-x-[-20px] lg:max-xl:w-25 xl:w-35 lg:max-xl:translate-x-[-10px] w-45 xl:translate-x-[-60px]" src="./src/assets/teensText.png" alt="" />
-                    </div>
-                </div>
-            </section>
+export default function Mainboard() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-300 via-slate-200 to-slate-100">
+      {/* Hero Content */}
+      <div className="container mx-auto px-8 py-32">
+        <div className="text-center mb-16">
+          <h2 className="text-slate-600 text-lg mb-4 tracking-wide">About Us</h2>
+          <h1 className="text-6xl font-bold text-slate-900 mb-8">COMPANY</h1>
+          <p className="max-w-3xl mx-auto text-slate-700 leading-relaxed text-lg">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut 
+            labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores 
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem.
+          </p>
         </div>
-        </>
-    );
-};
 
-export default Mainboard;
+        {/* Image Grid */}
+        <div className="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto">
+          {/* Left Image Card */}
+          <div className="relative bg-gradient-to-br from-slate-400 to-slate-300 rounded-2xl overflow-hidden shadow-xl h-80 flex-1">
+            <div className="absolute top-12 left-12 w-16 h-16 bg-white rounded-full"></div>
+            <svg className="absolute bottom-0 left-0 w-full" viewBox="0 0 400 300" preserveAspectRatio="none">
+              <path d="M0,150 Q100,80 200,120 T400,100 L400,300 L0,300 Z" fill="rgba(226, 232, 240, 0.9)" />
+            </svg>
+          </div>
+
+          {/* Right Image Card */}
+          <div className="relative bg-gradient-to-br from-slate-400 to-slate-300 rounded-2xl overflow-hidden shadow-xl h-80 flex-1">
+            <div className="absolute top-16 right-20 w-12 h-12 bg-white rounded-full"></div>
+            <svg className="absolute bottom-0 left-0 w-full" viewBox="0 0 400 300" preserveAspectRatio="none">
+              <path d="M0,180 Q100,120 200,140 T400,110 L400,300 L0,300 Z" fill="rgba(226, 232, 240, 0.9)" />
+            </svg>
+          </div>
+        </div>
+
+        {/* CTA Button */}
+        <div className="text-center mt-16">
+          <button className="bg-slate-800 hover:bg-slate-900 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-lg">
+            Learn More About Us
+          </button>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="bg-slate-50 py-24">
+        <div className="container mx-auto px-8">
+          <div className="flex flex-col md:flex-row gap-6 max-w-6xl mx-auto">
+            {[Image, DollarSign, BarChart3, Rocket].map((Icon, i) => (
+              <div key={i} className="group flex-1">
+                <div className="bg-white border-2 border-slate-300 rounded-3xl p-8 h-52 flex flex-col items-center justify-center transition-all duration-300 group-hover:bg-amber-500 group-hover:border-amber-500 cursor-pointer">
+                  <Icon className="w-14 h-14 transition-colors duration-300 stroke-slate-800 group-hover:stroke-black" strokeWidth={2.5} />
+                </div>
+                <h3 className="text-center mt-6 text-lg font-semibold text-slate-800">High Quality Printing</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Mission Section */}
+      <div className="bg-white py-24">
+        <div className="container mx-auto px-8">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div className="flex-1">
+              <div className="max-w-xl">
+                <h2 className="text-5xl font-bold text-slate-800 mb-8">Our<br />Mission</h2>
+                <p className="text-slate-700 text-lg leading-relaxed mb-8">
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.
+                </p>
+                <button className="border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300">
+                  Read more
+                </button>
+              </div>
+            </div>
+
+            <div className="flex-1 grid grid-cols-2 gap-6">
+              <div className="relative bg-gradient-to-br from-slate-400 to-slate-300 rounded-2xl overflow-hidden shadow-lg h-48">
+                <div className="absolute top-8 right-12 w-10 h-10 bg-white rounded-full" />
+                <svg className="absolute bottom-0 left-0 w-full h-32" viewBox="0 0 200 100" preserveAspectRatio="none">
+                  <path d="M0,60 Q50,30 100,50 T200,45 L200,100 L0,100 Z" fill="rgba(226,232,240,0.95)" />
+                </svg>
+              </div>
+              <div className="relative bg-gradient-to-br from-slate-400 to-slate-300 rounded-2xl overflow-hidden shadow-lg h-48">
+                <div className="absolute top-8 right-8 w-8 h-8 bg-white rounded-full" />
+                <svg className="absolute bottom-0 left-0 w-full h-32" viewBox="0 0 200 100" preserveAspectRatio="none">
+                  <path d="M0,70 Q50,40 100,55 T200,50 L200,100 L0,100 Z" fill="rgba(226,232,240,0.95)" />
+                </svg>
+              </div>
+              <div className="relative bg-gradient-to-br from-slate-400 to-slate-300 rounded-2xl overflow-hidden shadow-lg h-48 col-span-2">
+                <div className="absolute top-10 right-24 w-10 h-10 bg-white rounded-full" />
+                <svg className="absolute bottom-0 left-0 w-full h-36" viewBox="0 0 400 120" preserveAspectRatio="none">
+                  <path d="M0,75 Q100,35 200,60 T400,55 L400,120 L0,120 Z" fill="rgba(226,232,240,0.95)" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Meet Our Team Section */}
+      <div className="bg-slate-50 py-24">
+        <div className="container mx-auto px-8 text-center">
+          <h2 className="text-slate-600 text-lg mb-3 tracking-wide">MEET OUR TEAM</h2>
+          <h1 className="text-4xl font-bold text-slate-900 mb-4">Dedicated & Professional</h1>
+          <p className="max-w-2xl mx-auto text-slate-600 mb-16 text-lg">
+            Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+            {["Michael S.", "Emilio A.", "Andrew E."].map((name, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <div className="relative bg-gradient-to-b from-slate-300 to-slate-100 h-56 w-56 rounded-2xl shadow-md flex items-end justify-center overflow-hidden">
+                  <svg className="absolute bottom-0 left-0 w-full h-32" viewBox="0 0 200 100" preserveAspectRatio="none">
+                    <path d="M0,60 Q50,30 100,50 T200,45 L200,100 L0,100 Z" fill="white" />
+                  </svg>
+                  <div className="absolute top-6 left-1/2 -translate-x-1/2 w-14 h-14 bg-white rounded-full shadow-md"></div>
+                </div>
+                <h3 className="text-slate-800 text-xl font-semibold mt-6">{name}</h3>
+                <p className="text-slate-500 text-sm">CEO & President</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
