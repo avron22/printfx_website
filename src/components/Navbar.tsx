@@ -40,26 +40,7 @@ export default function Navbar() {
 {/* DESKTOP NAV */}
       <nav className="desktopNav hidden! lg:flex! sm:max-xl:gap-6 xl:gap-10! items-center">
         <NavLink to="/mainboard" className="text-[16px] font-semibold 2xl:text-[24px]" end>MAIN BOARD</NavLink>
-        <NavLink to="/infocus" className="text-[16px] font-semibold 2xl:text-[24px]">INFOCUS</NavLink>
-
-        {/* Models dropdown */}
-        <div
-          className="nav-dropdown relative"
-          onMouseEnter={() => setIsModelsOpen(true)}
-          onMouseLeave={() => setIsModelsOpen(false)}
-        >
-          <NavLink to="/models" className="nav-dropdown-trigger text-[16px] 2xl:text-[24px] inline-flex items-center gap-2">
-            MODELS <span className={`dropdown-arrow ${isModelsOpen ? "open" : ""}`}>▼</span>
-          </NavLink>
-
-          {isModelsOpen && (
-            <div className="nav-submenu absolute mt-2 bg-white shadow p-3">
-              <NavLink to="/models/kids" className="text-[16px] font-semibold 2xl:text-[24px]">Kids</NavLink>
-              <NavLink to="/models/teens" className="text-[16px] font-semibold 2xl:text-[24px]">Teens</NavLink>
-              <NavLink to="/models/thai" className="text-[16px] font-semibold 2xl:text-[24px]">Thai</NavLink>
-            </div>
-          )}
-        </div>
+        <NavLink to="/infocus" className="text-[16px] font-semibold 2xl:text-[24px]">INFOCUS</NavLink>     
 
         <NavLink to="/grwmrr" className="text-[16px] font-semibold 2xl:text-[24px]">GRWMRR</NavLink>
         <NavLink to="/contact" className="text-[16px] font-semibold 2xl:text-[24px]">CONTACT US</NavLink>
