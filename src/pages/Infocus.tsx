@@ -1,307 +1,216 @@
-import React, { useState } from 'react';
+import "./Infocus.css";
+import { useState } from "react";
+import Lightbox from "../components/Lightbox";
 
-interface DesignStep {
-  title: string;
-  description: string;
-}
+const Infocus = () => {
 
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-}
+    {/*Lightbox */}
 
-const whyChoosePoints: string[] = [
-  "Industry-leading quality with state-of-the-art printing technology",
-  "Experienced team dedicated to bringing your vision to life",
-  "Fast turnaround times without compromising on quality",
-  "Competitive pricing that fits your budget",
-  "Comprehensive solutions from design to installation"
-];
+      const [isOpen, setIsOpen] = useState(false);
+        const [activeImage, setActiveImage] = useState("");
 
-const designProcessSteps: DesignStep[] = [
-  {
-    title: "Consultation & Discovery",
-    description: "We begin by understanding your vision, brand identity, and specific requirements. Our team collaborates with you to define project goals and explore creative possibilities."
-  },
-  {
-    title: "Design & Development",
-    description: "Our expert designers craft custom solutions tailored to your needs. We present mockups and concepts, refining them based on your feedback to ensure perfect alignment."
-  },
-  {
-    title: "Production & Delivery",
-    description: "Using cutting-edge technology and premium materials, we bring your project to life with precision. Our team ensures timely delivery and professional installation when needed."
-  }
-];
+        const openLightbox = (src: string) => {
+            setActiveImage(src);
+            setIsOpen(true);
+        };
 
-export default function Mainboard(): React.ReactElement {
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: ''
-    });
-  };
-
-  return (
-    <div className="min-h-screen bg-white">
-      {/* Our Services Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-slate-50 via-white to-slate-50">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-black text-slate-900 mb-8 tracking-tight">
-              our services
-            </h1>
-            
-            <p className="text-slate-700 text-lg md:text-xl leading-relaxed mb-8">
-              We specialize in providing comprehensive printing and signage solutions tailored to your business needs. 
-              From high-quality large format printing to eye-catching custom signage, our state-of-the-art equipment 
-              and experienced team ensure superior results every time. Whether you need banners, vehicle wraps, 
-              indoor/outdoor signs, or promotional materials, we deliver excellence with attention to detail and 
-              commitment to your vision. Transform your brand visibility with our professional services designed 
-              to make your business stand out.
-            </p>
-
-            <button className="group inline-flex items-center gap-3 bg-sky-500 hover:bg-sky-600 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-sky-500/30">
-              <span>Book an Appointment</span>
-              <span className="transition-transform group-hover:translate-x-1">→</span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Design Process Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-white to-slate-50">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-16 text-center tracking-tight">
-              Design Process
-            </h2>
-
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              {designProcessSteps.map((step: DesignStep, index: number) => {
-                const stepNumber: number = index + 1;
-                return (
-                  <div key={index} className="flex flex-col">
-                    {/* Visual Card */}
-                    <div className="group relative bg-gradient-to-br from-slate-200 via-slate-100 to-slate-50 rounded-2xl overflow-hidden shadow-lg h-56 mb-6 hover:scale-105 transition-all duration-500">
-                      <div className="absolute top-10 right-12 w-14 h-14 bg-white rounded-full opacity-80 group-hover:scale-110 transition-transform"></div>
-                      <div className="absolute bottom-12 left-10 w-10 h-10 bg-white rounded-full opacity-60"></div>
-                      <svg className="absolute bottom-0 left-0 w-full h-32 transition-transform group-hover:translate-y-2" viewBox="0 0 300 150" preserveAspectRatio="none">
-                        <path d="M0,80 Q75,40 150,70 T300,65 L300,150 L0,150 Z" fill="rgba(255, 255, 255, 0.9)" />
-                      </svg>
-                      
-                      {/* Step Number */}
-                      <div className="absolute top-6 left-6 w-10 h-10 bg-slate-900 text-white rounded-full flex items-center justify-center font-bold text-lg">
-                        {stepNumber}
-                      </div>
+    {/*Infocus Main */}
+    return(
+        <>
+        <div className="w-full sm:py-5 lg:py-25">
+            <img className="sm:ml-5 lg:ml-25 w-[250px] 2xl:w-[400px]" src="/src/assets/infocus.png" alt="" />
+            {/*RUNWAY MODELS SECTION */}
+            <section className="overflow-hidden flex flex-col items-center justify-center">
+                <h1 className="text-[40px] 2xl:text-5xl 2xl:pb-5 font-medium">Runway Models</h1>
+                <div className="sm:px-0 flex flex-col sm:gap-2 sm:w-[80%] md:max-xl:px-5 xl:gap-5 py-5 lg:px-20 md:w-full">
+                    {/*Row 1 */}
+                    <div className=" sm:grid sm:grid-cols-2 sm:pl-0 sm:gap-2 md:max-lg:pl-[10vw] md:max-lg:pr-[5vw] lg:max-xl:pl-[95px] md:max-lg:min-h-[150px] lg:max-xl:min-h-[250px] xl:max-2xl:min-h-[400px] xl:max-2xl:pl-[155px] 2xl:min-h-[500px] 2xl:pl-[260px] 2xl:pr-[50px] md:grid md:grid-cols-4 xl:gap-5 justify-items-start">
+                        <div className="sm:max-lg:h-auto lg:max-xl:h-[250px] xl:max-2xl:h-[400px] 2xl:h-[550px] relative overflow-hidden  z-1 skew-x-[-20deg]">
+                            <div className="performersImageWrapper cursor-pointer"
+                                 onClick={() => openLightbox("./src/assets/Artboard-1.png")}>
+                                <img className="block w-full h-auto object-cover skew-x-[20deg] sm:scale-[1.7] md:scale-[1.6] sm:translate-y-[50px] md:translate-y-[40px] xl:translate-y-[80px] transition-all duration-400 ease-in-out hover:translate-x-[-10px]" 
+                                     src="./src/assets/Artboard-1.png" 
+                                     alt="Model 1" 
+                                />
+                            </div> 
+                        </div>
+                        <div className="sm:max-lg:h-auto lg:max-xl:h-[250px] xl:max-2xl:h-[400px] 2xl:h-[550px] relative overflow-hidden  z-1 skew-x-[-20deg]">
+                            <div className="performersImageWrapper cursor-pointer"
+                                 onClick={() => openLightbox("./src/assets/Artboard-2.png")}>
+                                    <img className="block w-full h-auto object-cover skew-x-[20deg] sm:scale-[1.7] md:scale-[1.6] sm:translate-y-[50px] md:translate-y-[40px] xl:translate-y-[80px] transition-all duration-400 ease-in-out hover:translate-x-[-10px]" 
+                                         src="./src/assets/Artboard-2.png" 
+                                         alt="Model 2" 
+                                    />
+                            </div> 
+                        </div>
+                        <div className="sm:max-lg:h-auto lg:max-xl:h-[250px] xl:max-2xl:h-[400px] 2xl:h-[550px] relative overflow-hidden  z-1 skew-x-[-20deg]">
+                            <div className="performersImageWrapper cursor-pointer"
+                                 onClick={() => openLightbox("./src/assets/Artboard-3.png")}>
+                                    <img className="block w-full h-auto object-cover skew-x-[20deg] sm:scale-[1.7] md:scale-[1.6] sm:translate-y-[50px] md:translate-y-[40px] xl:translate-y-[80px] transition-all duration-400 ease-in-out hover:translate-x-[-10px]" 
+                                         src="./src/assets/Artboard-3.png" 
+                                         alt="Model 3" 
+                                    />
+                            </div> 
+                            
+                        </div>
+                        <div className="sm:max-lg:h-auto lg:max-xl:h-[250px] xl:max-2xl:h-[400px] 2xl:h-[550px] relative overflow-hidden  z-1 skew-x-[-20deg]">
+                            <div className="performersImageWrapper cursor-pointer"
+                                 onClick={() => openLightbox("./src/assets/Artboard-4.png")}>
+                                    <img className="block w-full h-auto object-cover skew-x-[20deg] sm:scale-[1.7] md:scale-[1.6] sm:translate-y-[50px] md:translate-y-[40px] xl:translate-y-[80px] transition-all duration-400 ease-in-out hover:translate-x-[-10px]"
+                                         src="./src/assets/Artboard-4.png"
+                                        alt="Model 4" 
+                                    />
+                            </div> 
+                        </div>
                     </div>
-
-                    {/* Content */}
-                    <div className="flex-1">
-                      <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3">
-                        {step.title}
-                      </h3>
-                      <p className="text-slate-600 leading-relaxed">
-                        {step.description}
-                      </p>
+                    {/*Row 2 */}
+                    <div className="sm:grid sm:grid-cols-2 sm:pr-0 sm:gap-2 md:max-lg:pl-[2.5vw] md:max-lg:pr-[12.5vw] lg:max-xl:pr-[95px] lg:max-xl:min-h-[250px] xl:max-2xl:min-h-[400px] xl:max-2xl:pr-[150px] 2xl:min-h-[500px] 2xl:pl-[50px] 2xl:pr-[260px] md:grid md:grid-cols-4 xl:gap-5 justify-items-start">
+                        <div className="sm:max-lg:h-auto lg:max-xl:h-[250px] xl:max-2xl:h-[400px] 2xl:h-[550px] relative overflow-hidden  z-1 skew-x-[-20deg]">
+                            <div className="performersImageWrapper cursor-pointer"
+                                 onClick={() => openLightbox("./src/assets/Artboard-5.png")}>
+                                    <img className=" block w-full h-auto object-cover skew-x-[20deg] sm:scale-[1.7] md:scale-[1.6] sm:translate-y-[50px] md:translate-y-[40px] :translate-y-[50px] xl:translate-y-[70px] transition-all duration-400 ease-in-out hover:translate-x-[-10px]"
+                                         src="./src/assets/Artboard-5.png" 
+                                         alt="Model 5" 
+                                    />
+                            </div>                    
+                        </div>
+                        <div className="sm:max-lg:h-auto lg:max-xl:h-[250px] xl:max-2xl:h-[400px] 2xl:h-[550px] relative overflow-hidden  z-1 skew-x-[-20deg]">
+                            <div className="performersImageWrapper cursor-pointer"
+                                 onClick={() => openLightbox("./src/assets/Artboard-6.png")}>
+                                    <img className=" block w-full h-auto object-cover skew-x-[20deg] sm:scale-[1.7] md:scale-[1.6] sm:translate-y-[50px] md:translate-y-[40px] xl:translate-y-[70px] transition-all duration-400 ease-in-out hover:translate-x-[-10px]"
+                                         src="./src/assets/Artboard-6.png" 
+                                         alt="Model 6" 
+                                    />
+                            </div>          
+                        </div>
+                        <div className="sm:max-md:translate-x-[50%] sm:max-lg:h-auto lg:max-xl:h-[250px] xl:max-2xl:h-[400px] 2xl:h-[550px] relative overflow-hidden  z-1 skew-x-[-20deg]">
+                            <div className="performersImageWrapper cursor-pointer"
+                                 onClick={() => openLightbox("./src/assets/Artboard-7.png")}>
+                                    <img className=" block w-full h-auto object-cover skew-x-[20deg] sm:scale-[1.7] md:scale-[1.6] sm:translate-y-[50px] md:translate-y-[40px] xl:translate-y-[70px] transition-all duration-400 ease-in-out hover:translate-x-[-10px]"
+                                         src="./src/assets/Artboard-7.png" 
+                                         alt="Model 7" 
+                                    />  
+                            </div> 
+                        </div>
+                        {/*Contact Us tile*/}
+                        <div className=" sm:max-md:col-span-2 sm:max-md:p-[14px] sm:max-md:mx-[-40px] md:max-lg:ml-[20px] md:max-lg:mr-[-60px] md:max-xl:p-0 lg:max-xl:ml-[40px] md:max-lg:min-h-[150px] lg:max-xl:h-[250px] xl:max-2xl:h-[400px]  2xl:h-[550px] lg:max-xl:max-w-[280px] relative bg-[var(--bg)] text-[var(--text)] flex flex-col justify-center items-center xl:p-5 gap-[30px] lg:ml-10 lg:mr-[-140px]">
+                            <p className="sm:max-md:text-center sm:text-[22px] md:max-lg:text-[1rem] md:max-lg:mb-0 lg:max-xl:text-xl xl:text-3xl 2xl:text-5xl 2xl:leading-normal xl:mb-5">Become part of a vibrant community celebrating youth, talent, and fashion.</p>
+                            <div className="max-w-[350px]">
+                                <div className="sm:max-md:pl-[50px] flex justify-end group">
+                                    <a className="flex justify-end group" href="https://manilarunwayrepublic.com/contact">
+                                        <button className="sm:max-lg:text-[0.8rem] lg:max-xl:text-[1rem] relative bg-[var(--bg)] text-[var(--text)] border-solid border-3 rounded-[26px] sm:max-lg:py-0 md:max-lg:px-2 px-6 py-3 text-[1.8rem] 
+                                                        cursor-pointer overflow-hidden transition-colors duration-400 ease-in-out before:content-[''] before:absolute before:top-0 before:left-0 before:w-0 before:h-full before:bg-[var(--text)] before:z-0 before:transition-all before:duration-400 before:ease-in-out hover:before:w-full">
+                                            <span className="sm:max-lg:text-[18px] lg:max-xl:text-xl relative text-3xl tracking-wider z-[1] group-hover:text-[var(--bg)] transition-colors duration-400 ease-in-out">Contact Us</span>
+                                        </button>
+                                        <img className="translate-x-[-30px] h-[50px] w-[50px] opacity-0 transition-all duration-400 ease-in-out group-hover: group-hover:translate-y-[-40px] group-hover:translate-x-0 group-hover:opacity-100" 
+                                            src="./src/assets/Icon-weather-stars.svg" 
+                                            alt="" 
+                                        />
+                                    </a>
+                                </div>
+                            </div>                        
+                        </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
+                </div>
+            </section>
+            {/*PERFORMERS SECTION */}
+            <section className="sm:max-lg:px-[20px] md:max-lg:px-[60px] flex flex-col items-center justify-center pb-25">
+                <h1 className="sm:max-lg:py-[40px] text-[40px] 2xl:text-5xl font-medium py-[80px]">Performers</h1>
+                <p className="sm:max-md:text-[18px] md:text-xl 2xl:text-3xl pb-[60px] text-center">Showcase your talents and be known. Here are our Model / Performers from The Voice Kids.</p>
+                <div className="sm:max-lg:px-0 sm:max-md:gap-[10px] sm:max-md:grid sm:max-md:grid-cols-2 md:max-lg:gap-[60px] lg:max-xl:px-[150px] xl:max-2xl:px-[288px] flex gap-[90px] px-[288px] w-full justify-between">
+                    <div
+                        className="sm:max-md:hidden performersImageWrapper cursor-pointer"
+                        onClick={() => openLightbox("./src/assets/Performer-1.jpg")}>
+                        <img
+                            className="w-full h-auto object-cover shadow-[3px_3px_20px_0px_rgba(0,0,0,0.4)]"
+                            src="./src/assets/Performer-1.jpg"
+                            alt="Performer 1"
+                        />
+                    </div>
+                    <div
+                        className="performersImageWrapper cursor-pointer"
+                        onClick={() => openLightbox("./src/assets/Performer-2.jpg")}>
+                        <img
+                            className="w-full h-auto object-cover shadow-[3px_3px_20px_0px_rgba(0,0,0,0.4)]"
+                            src="./src/assets/Performer-2.jpg"
+                            alt="Performer 2"
+                        />
+                    </div>
+                    <div
+                        className="performersImageWrapper cursor-pointer"
+                        onClick={() => openLightbox("./src/assets/Performer-3.jpg")}>
+                        <img
+                            className="w-full h-auto object-cover shadow-[3px_3px_20px_0px_rgba(0,0,0,0.4)]"
+                            src="./src/assets/Performer-3.jpg"
+                            alt="Performer 3"
+                        />
+                    </div>
+                    {/*Mobile Performer Image 1 */}
+                    <div
+                        className="sm:max-md:col-span-2 md:hidden performersImageWrapper cursor-pointer"
+                        onClick={() => openLightbox("./src/assets/Performer-1.jpg")}>
+                        <img
+                            className="w-full h-auto sm:max-md:max-h-[500px] object-cover object-top shadow-[3px_3px_20px_0px_rgba(0,0,0,0.4)]"
+                            src="./src/assets/Performer-1.jpg"
+                            alt="Performer 1"
+                        />
+                    </div>
+                </div>
+            </section>
+            {/*EVENTS SECTION */}
+            <section className="sm:max-md:px-[5px] sm:max-md:pb-[5px] md:max-lg:px-[80px] md:max-lg:pb-[60px] lg:max-xl:px-[100px] flex flex-col items-center justify-center pb-25 2xl:pb-40 px-40 bg-[#cfcfcf]">
+                <h1 className="text-[40px] 2xl:text-5xl font-medium pt-[20px] pb-[40px]">Events</h1>
+                <p className="sm:max-md:pb-[20px] text-xl pb-[60px] 2xl:pb-[120px] 2xl:text-3xl text-center">Here’s a sneak peek at our international stage.</p>
+                {/*Desktop Events */}
+                <div className="sm:max-md:hidden md:max-xl:gap-x-[60px] md:max-xl:gap-y-[80px] 2xl:gap-[300px] grid grid-cols-3 gap-30">
+                    <div className="eventImageWrapper">
+                        <img src="./src/assets/Event-1.png" className="2xl:scale-[1.4]" alt="Event 1" />
+                    </div>
+                    <div className="eventImageWrapper">
+                        <img src="./src/assets/Event-2.png" className="2xl:scale-[1.4]" alt="Event 2" />
+                    </div>
+                    <div className="eventImageWrapper">
+                        <img src="./src/assets/Event-3.png" className="2xl:scale-[1.4]" alt="Event 3" />
+                    </div>
+                    <div className="eventImageWrapper">
+                        <img src="./src/assets/Event-4.png" className="2xl:scale-[1.4]" alt="Event 4" />
+                    </div>
+                    <div className="eventImageWrapper">
+                        <img src="./src/assets/Event-5.png" className="2xl:scale-[1.4]" alt="Event 5" />
+                    </div>
+                    <div className="eventImageWrapper">
+                        <img src="./src/assets/Event-6.png" className="2xl:scale-[1.4]" alt="Event 6" />
+                    </div>
+                </div>
+                {/*Mobile Events */}
+                <div className="md:hidden sm:max-md:gap-1 sm:max-md:grid sm:max-md:grid-cols-2">
+                    <div className="eventImageWrapper">
+                        <img src="./src/assets/Event-3.png" alt="Event 1" />
+                    </div>
+                    <div className="eventImageWrapper">
+                        <img src="./src/assets/Event-2.png" alt="Event 2" />
+                    </div>
+                    <div className="eventImageWrapper col-span-2 m-auto">
+                        <img src="./src/assets/Event-1.png" alt="Event 3" />
+                    </div>
+                    <div className="eventImageWrapper">
+                        <img src="./src/assets/Event-5.png" alt="Event 5" />
+                    </div>
+                    <div className="eventImageWrapper">
+                        <img src="./src/assets/Event-6.png" alt="Event 6" />
+                    </div>
+                </div>
+            </section>
 
-            {/* CTA Button */}
-            <div className="text-center">
-              <button className="group inline-flex items-center gap-3 bg-slate-900 hover:bg-slate-800 text-white px-10 py-4 rounded-xl text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-slate-900/30">
-                <span>Click here</span>
-                <span className="transition-transform group-hover:translate-x-1">→</span>
-              </button>
-            </div>
-          </div>
+            {/* Lightbox instance */}
+            <Lightbox
+                src={activeImage}
+                isOpen={isOpen}
+                onClose={() => setIsOpen(false)}
+            />
         </div>
-      </section>
+        </>
+    );
+};
 
-      {/* Why Choose Print FX Section */}
-      <section className="py-20 md:py-32 bg-white">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
-              {/* Left Content */}
-              <div>
-                <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-10 tracking-tight">
-                  Why Choose Print FX
-                </h2>
-
-                <div className="space-y-6">
-                  {whyChoosePoints.map((point: string, index: number) => {
-                    const pointKey: string = `why-choose-${index}`;
-                    return (
-                      <div key={pointKey} className="flex items-start gap-4 group">
-                        <div className="flex-shrink-0 w-2 h-2 bg-slate-900 rounded-full mt-3 group-hover:scale-150 transition-transform duration-300"></div>
-                        <p className="text-slate-700 text-lg leading-relaxed group-hover:text-slate-900 transition-colors">
-                          {point}
-                        </p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Right Visual Elements */}
-              <div className="grid grid-cols-2 gap-6">
-                <div className="group relative bg-gradient-to-br from-slate-200 via-slate-100 to-slate-50 rounded-3xl overflow-hidden shadow-lg h-64 hover:scale-105 transition-all duration-500">
-                  <div className="absolute top-8 right-10 w-16 h-16 bg-white rounded-full opacity-80 group-hover:scale-110 transition-transform"></div>
-                  <div className="absolute bottom-8 left-8 w-12 h-12 bg-white rounded-full opacity-60"></div>
-                  <svg className="absolute bottom-0 left-0 w-full h-32 transition-transform group-hover:translate-y-2" viewBox="0 0 200 100" preserveAspectRatio="none">
-                    <path d="M0,60 Q50,30 100,50 T200,45 L200,100 L0,100 Z" fill="rgba(148, 163, 184, 0.3)" />
-                  </svg>
-                </div>
-
-                <div className="group relative bg-gradient-to-br from-slate-300 via-slate-200 to-slate-100 rounded-3xl overflow-hidden shadow-lg h-64 hover:scale-105 transition-all duration-500">
-                  <div className="absolute top-10 right-8 w-14 h-14 bg-white rounded-full opacity-70 group-hover:scale-110 transition-transform"></div>
-                  <svg className="absolute bottom-0 left-0 w-full h-32 transition-transform group-hover:translate-y-2" viewBox="0 0 200 100" preserveAspectRatio="none">
-                    <path d="M0,70 Q50,40 100,55 T200,50 L200,100 L0,100 Z" fill="rgba(148, 163, 184, 0.4)" />
-                  </svg>
-                </div>
-
-                <div className="group relative bg-gradient-to-br from-slate-300 via-slate-200 to-slate-100 rounded-3xl overflow-hidden shadow-lg h-64 col-span-2 hover:scale-105 transition-all duration-500">
-                  <div className="absolute top-12 right-20 w-16 h-16 bg-white rounded-full opacity-75 group-hover:scale-110 transition-transform"></div>
-                  <div className="absolute bottom-16 left-16 w-10 h-10 bg-white rounded-full opacity-60"></div>
-                  <svg className="absolute bottom-0 left-0 w-full h-36 transition-transform group-hover:translate-y-2" viewBox="0 0 400 120" preserveAspectRatio="none">
-                    <path d="M0,75 Q100,35 200,60 T400,55 L400,120 L0,120 Z" fill="rgba(148, 163, 184, 0.4)" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Get in Touch Section */}
-      <section className="bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 py-20 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left side - Form */}
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Get in Touch!
-              </h2>
-              <p className="text-gray-700 mb-8 text-lg">
-                Have a project in mind? Let's bring your ideas to life. Fill out the form and we'll get back to you within 24 hours.
-              </p>
-
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none transition-colors"
-                    placeholder="Your full name"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none transition-colors"
-                    placeholder="your.email@example.com"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none transition-colors"
-                    placeholder="+1 (555) 000-0000"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={4}
-                    className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none transition-colors resize-none"
-                    placeholder="Tell us about your project..."
-                    required
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold px-8 py-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-[1.02] shadow-lg"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-
-            {/* Right side - Image */}
-            <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-300">
-                <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800"
-                  alt="Happy customer with custom printed products"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent"></div>
-              </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-purple-400 rounded-full blur-2xl opacity-50"></div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-pink-400 rounded-full blur-2xl opacity-50"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-}
+export default Infocus;

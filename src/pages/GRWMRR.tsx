@@ -1,91 +1,133 @@
-import React from 'react';
-import { Star } from 'lucide-react';
+import grwmrr1 from "../assets/grwmrr1.png";
+import grwmrr2 from "../assets/grwmrr2.png";
+import grwmrr3 from "../assets/grwmrr3.png";
+import grwmrr4 from "../assets/grwmrr4.png";
+import rising1 from "../assets/rising1.png";
+import rising2 from "../assets/rising2.png";
+import rising3 from "../assets/rising3.png";
+import rising4 from "../assets/rising4.png";
+import rising5 from "../assets/rising5.png";
+import rising6 from "../assets/rising6.png";
+import rising7 from "../assets/rising7.png";
+import rising8 from "../assets/rising8.png";
 
-interface Product {
-  id: number;
-  name: string;
-  image: string;
-}
+const GRWMRR: React.FC = () => {
+  const images = [grwmrr1, grwmrr2, grwmrr3, grwmrr4];
 
-const products: Product[] = [
-  { id: 1, name: 'Banner Prints', image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=300&fit=crop' },
-  { id: 2, name: 'Vehicle Wraps', image: 'https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=400&h=300&fit=crop' },
-  { id: 3, name: 'Signage Boards', image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=300&fit=crop' },
-  { id: 4, name: 'Wall Graphics', image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=400&h=300&fit=crop' },
-  { id: 5, name: 'Retail Displays', image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop' },
-  { id: 6, name: 'Window Decals', image: 'https://images.unsplash.com/photo-1555421689-d68471e189f2?w=400&h=300&fit=crop' },
-  { id: 7, name: 'Trade Show Graphics', image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop' },
-  { id: 8, name: 'Promotional Materials', image: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?w=400&h=300&fit=crop' },
-  { id: 9, name: 'Business Cards', image: 'https://images.unsplash.com/photo-1589330273594-fade1ee91647?w=400&h=300&fit=crop' },
-  { id: 10, name: 'Brochures', image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop' },
-  { id: 11, name: 'Posters', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop' },
-  { id: 12, name: 'Custom Prints', image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=300&fit=crop' }
-];
+  const groups = [
+    { caption: "Young Designers in Action", imgs: [rising1, rising2] },
+    { caption: "Future Runway Models", imgs: [rising3, rising4] },
+    { caption: "Creative Stylists", imgs: [rising5, rising6] },
+    { caption: "Rising Icons", imgs: [rising7, rising8] },
+  ];
 
-export default function GRWMRR(): React.ReactElement {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
-      <div className="container mx-auto px-6 py-16 md:py-24">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <Star className="w-8 h-8 fill-sky-400 text-sky-400 animate-pulse" />
-            <h1 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tight">
-              Products
-            </h1>
-            <Star className="w-8 h-8 fill-sky-400 text-sky-400 animate-pulse" />
-          </div>
-          <p className="text-slate-600 text-lg md:text-xl max-w-3xl mx-auto">
-            Discover our comprehensive range of premium printing and signage solutions designed to elevate your brand
-          </p>
-        </div>
+    <div className="overflow-x-hidden">
+      {/* ----------------- */}
+{/* First Section */}
+{/* ----------------- */}
+<div className="w-full my-8">
+  <div className="flex justify-start px-8 max-md:justify-center">
+    <img
+      src="/src/assets/mrr.png"
+      alt="Get Ready with MRR"
+      className="w-[40%] h-auto block max-md:w-[70%]"
+    />
+  </div>
+</div>
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
-          {products.map((product) => (
+      <div className="bg-white max-w-[1200px] mx-auto px-8 py-16 text-center">
+        <h2 className="text-xl text-gray-600 mb-8 font-medium">
+          Rehearsals & Coaching Sessions
+        </h2>
+
+        <div className="flex flex-wrap justify-center items-center gap-12">
+          {images.map((img, index) => (
             <div
-              key={product.id}
-              className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 cursor-pointer"
+              key={index}
+              className="w-full md:w-[45%] transition-transform duration-300 hover:scale-105"
             >
-              {/* Image Container */}
-              <div className="relative h-48 bg-gradient-to-br from-slate-200 to-slate-100 overflow-hidden">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="bg-white text-slate-900 px-6 py-2 rounded-full font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    View Details
-                  </span>
-                </div>
-              </div>
-
-              {/* Product Name */}
-              <div className="p-4 bg-white">
-                <h3 className="text-center text-slate-900 font-bold text-sm md:text-base group-hover:text-sky-600 transition-colors">
-                  {product.name}
-                </h3>
-              </div>
-
-              {/* Decorative Corner */}
-              <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-sky-400/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <img
+                src={img}
+                alt={`grwmrr-${index}`}
+                className="rounded-lg shadow-md w-full max-w-[600px] mx-auto"
+              />
             </div>
           ))}
         </div>
+      </div>
 
-        {/* CTA Section */}
-        <div className="text-center mt-16">
-          <button className="group inline-flex items-center gap-3 bg-gradient-to-r from-sky-500 to-purple-600 hover:from-sky-600 hover:to-purple-700 text-white px-10 py-5 rounded-2xl text-lg font-bold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/40">
-            <span>Explore All Products</span>
-            <span className="transition-transform group-hover:translate-x-2">→</span>
-          </button>
+      {/* ----------------- */}
+      {/* Second Section */}
+      {/* ----------------- */}
+      <div className="w-screen bg-gray-300 py-24 overflow-hidden">
+        <div className="max-w-[1200px] mx-auto px-8">
+          <h1 className="text-3xl font-bold text-center mb-4">Rising Stars</h1>
+          <h2 className="text-xl text-gray-600 text-center mb-12">
+            Shaping the Future of Fashion from a Young Age
+          </h2>
+
+          {groups.map((group, index) => (
+            <div key={index} className="mb-20 text-left">
+              <div className="text-lg font-semibold text-gray-800 mb-8">
+                {group.caption}
+              </div>
+
+              <div className="flex flex-wrap justify-center items-start gap-20 mb-16">
+                {group.imgs.map((img, i) => (
+                  <div
+                    key={i}
+                    className="w-full md:w-[45%] transition-transform duration-300 hover:scale-105"
+                  >
+                    <img
+                      src={img}
+                      alt={`rising-${index}-${i}`}
+                      className="rounded-lg w-full max-w-[500px] mx-auto"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-      
+
+      {/* ----------------- */}
+      {/* Hero Section with transparent → color-fill button */}
+      {/* ----------------- */}
+      <section className="text-center py-20 px-8 bg-white">
+        <p className="text-3xl text-gray-700 mb-4 font-serif">
+          Manila Runway Republic is where your journey begins.
+        </p>
+        <p className="text-3xl text-gray-700 mb-12 font-serif">
+          Join us as we celebrate youth, talent, and fashion.
+        </p>
+
+        <div className="flex justify-center group relative">
+          <a
+            className="flex justify-end group"
+            href="http://localhost:5173/contact"
+          >
+            <button
+              className="relative border-2 border-gray-700 text-gray-700 bg-transparent rounded-[26px] px-8 py-3 text-xl md:text-2xl font-semibold cursor-pointer overflow-hidden transition-colors duration-400 ease-in-out 
+              before:content-[''] before:absolute before:top-0 before:left-0 before:w-0 before:h-full before:bg-gray-700 before:z-0 before:transition-all before:duration-500 before:ease-in-out hover:before:w-full"
+            >
+              <span className="relative z-[1] tracking-wider transition-colors duration-400 ease-in-out group-hover:text-white">
+                Contact Us
+              </span>
+            </button>
+
+            {/* Floating star icon */}
+            <img
+              className="translate-x-[-30px] h-[50px] w-[50px] opacity-0 transition-all duration-400 ease-in-out group-hover:translate-y-[-40px] group-hover:translate-x-0 group-hover:opacity-100"
+              src="/src/assets/Icon-weather-stars.svg"
+              alt="Stars icon"
+            />
+          </a>
+        </div>
+      </section>
     </div>
   );
-}
+};
+
+export default GRWMRR;
