@@ -104,45 +104,62 @@ const Home = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Add your form submission logic here
+    alert('Message sent successfully!');
+    setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
   return (
-    <div className="bg-[#C3CCD3] flex flex-col overflow-hidden">
-      {/* === HERO CONTENT + WAVE === */}
-      <div className="relative flex flex-col justify-center w-screen min-h-screen">
+    <div className="bg-white flex flex-col overflow-hidden">
+      {/* === HERO CONTENT === */}
+      <div className="relative flex flex-col justify-center w-screen min-h-screen bg-gradient-to-br from-slate-50 to-stone-50">
+        {/* Subtle geometric pattern overlay */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
+        
         {/* Text content */}
-        <div className="px-12 md:px-24 z-10">
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">
-            Your Designs.
-          </h1>
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">Our Prints.</h1>
-          <h1 className="text-3xl md:text-4xl font-bold mb-6">
-            Infinite Possibilities.
-          </h1>
-          <button className="bg-black text-white font-semibold px-6 py-2 rounded-md hover:bg-gray-800 transition">
-            Start Now
+        <div className="px-12 md:px-24 lg:px-32 z-10 max-w-7xl mx-auto w-full">
+          <div className="space-y-2 mb-8">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-slate-900">
+              Your Designs.
+            </h1>
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-slate-900">
+              Our Prints.
+            </h1>
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">
+              Infinite Possibilities.
+            </h1>
+          </div>
+          <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl leading-relaxed">
+            Transform your creative vision into reality with premium custom printing solutions tailored for your brand.
+          </p>
+          <button className="group relative bg-slate-900 text-white font-semibold px-10 py-4 rounded-full hover:bg-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+            <span className="relative z-10">Start Your Project</span>
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-slate-800 to-slate-700 opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </button>
         </div>
 
-        {/* Wavy background */}
+        {/* Minimal wave transition */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
           <svg
-            className="relative block w-[calc(200%+1.3px)] h-[300px]"
+            className="relative block w-full h-[120px] md:h-[180px]"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1200 120"
             preserveAspectRatio="none"
           >
             <path
               d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.4,168.19-17.45,250.45-.39,66.44,13.37,130.71,38.59,197.2,51.23,60.51,11.34,122.74,12.61,183.87,1.73V120H0V16.48C61.39,32.36,122.8,47.33,184.21,54.05,230.85,59.01,276.23,65.67,321.39,56.44Z"
-              fill="#E8EBEE"
+              fill="#ffffff"
             ></path>
           </svg>
         </div>
       </div>
 
-      {/* === CAROUSEL SECTION (below wave) === */}
-      <div className="bg-white py-12 overflow-hidden">
+      {/* === TRUSTED BY SECTION === */}
+      <div className="bg-white py-16 overflow-hidden border-y border-slate-100">
+        <div className="text-center mb-10">
+          <p className="text-sm font-semibold text-slate-500 tracking-widest uppercase">Trusted by Leading Brands</p>
+        </div>
         <div className="relative w-full">
           <style>{`
             @keyframes scroll {
@@ -154,45 +171,45 @@ const Home = () => {
               }
             }
             .animate-scroll {
-              animation: scroll 20s linear infinite;
+              animation: scroll 25s linear infinite;
             }
           `}</style>
-          <div className="flex animate-scroll space-x-12">
+          <div className="flex animate-scroll space-x-16">
             {[...Array(20)].map((_, i) => (
-              <div key={i} className="flex items-center space-x-6 flex-shrink-0">
-                <img
-                  src="https://via.placeholder.com/100x100.png?text=Logo"
-                  alt="placeholder"
-                  className="w-24 h-24 object-contain"
-                />
-                <div className="w-[2px] h-20 bg-gray-300"></div>
+              <div key={i} className="flex items-center space-x-16 flex-shrink-0">
+                <div className="w-32 h-20 bg-slate-100 rounded-lg flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity">
+                  <span className="text-slate-400 text-xs font-medium">BRAND</span>
+                </div>
               </div>
             ))}
           </div>
 
           {/* Edge fade effect */}
-          <div className="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
-          <div className="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
+          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
         </div>
       </div>
 
       {/* === OUR PRODUCTS SECTION === */}
-      <div className="bg-[#E8EBEE] py-16 px-12 md:px-24">
+      <div className="bg-gradient-to-b from-white to-slate-50 py-24 px-12 md:px-24">
         <div className="max-w-7xl mx-auto">
           {/* Header with arrows */}
-          <div className="flex items-center justify-between mb-10">
-            <h2 className="text-4xl font-bold">Our Products</h2>
+          <div className="flex items-center justify-between mb-16">
+            <div>
+              <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-3">Our Products</h2>
+              <p className="text-slate-600 text-lg">Explore our premium collection</p>
+            </div>
             <div className="flex gap-3">
               <button
                 onClick={prevSlide}
-                className="bg-black text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-800 transition"
+                className="bg-slate-900 text-white w-14 h-14 rounded-full flex items-center justify-center hover:bg-slate-800 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                 aria-label="Previous slide"
               >
                 <ChevronLeft size={24} />
               </button>
               <button
                 onClick={nextSlide}
-                className="bg-black text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-800 transition"
+                className="bg-slate-900 text-white w-14 h-14 rounded-full flex items-center justify-center hover:bg-slate-800 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                 aria-label="Next slide"
               >
                 <ChevronRight size={24} />
@@ -203,23 +220,26 @@ const Home = () => {
           {/* Products carousel */}
           <div className="relative overflow-hidden">
             <div
-              className="flex transition-transform duration-500 ease-in-out"
+              className="flex transition-transform duration-700 ease-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {Array.from({ length: Math.ceil(products.length / itemsPerSlide) }).map((_, slideIndex) => (
-                <div key={slideIndex} className="min-w-full flex gap-6">
+                <div key={slideIndex} className="min-w-full flex gap-8">
                   {products.slice(slideIndex * itemsPerSlide, (slideIndex + 1) * itemsPerSlide).map((product) => (
                     <div key={product.id} className="flex-1">
-                      <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-                        <div className="aspect-[4/3] overflow-hidden">
+                      <div className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
+                        <div className="aspect-[4/3] overflow-hidden bg-slate-50">
                           <img
                             src={product.image}
                             alt={product.title}
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           />
                         </div>
-                        <div className="p-4">
-                          <h3 className="text-lg font-semibold text-center">{product.title}</h3>
+                        <div className="p-6">
+                          <h3 className="text-xl font-semibold text-slate-900 text-center">{product.title}</h3>
+                          <button className="mt-4 w-full py-3 text-sm font-medium text-slate-700 hover:text-slate-900 border border-slate-200 rounded-full hover:border-slate-900 transition-all duration-300">
+                            View Details
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -230,13 +250,13 @@ const Home = () => {
           </div>
 
           {/* Slide indicators */}
-          <div className="flex justify-center gap-2 mt-8">
+          <div className="flex justify-center gap-2 mt-12">
             {Array.from({ length: maxSlide + 1 }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  currentSlide === index ? 'bg-black w-8' : 'bg-gray-400'
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  currentSlide === index ? 'bg-slate-900 w-12' : 'bg-slate-300 w-2 hover:bg-slate-400'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -246,27 +266,27 @@ const Home = () => {
       </div>
 
       {/* === FAQ SECTION === */}
-      <div className="bg-white py-16 px-12 md:px-24">
+      <div className="bg-white py-24 px-12 md:px-24">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-3 text-gray-900">Frequently Asked Questions</h2>
-          <p className="text-gray-600 mb-12">Find answers to common questions about our printing services</p>
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 text-slate-900">Frequently Asked Questions</h2>
+          <p className="text-slate-600 text-lg mb-16">Find answers to common questions about our printing services</p>
           
-          <div className="space-y-4">
+          <div className="space-y-3">
             {faqs.map((faq) => (
               <div 
                 key={faq.id} 
-                className="bg-gray-50 rounded-xl overflow-hidden border border-gray-200 hover:border-gray-300 transition-colors"
+                className="bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 hover:border-slate-200 transition-all duration-300"
               >
                 <button
                   onClick={() => toggleFaq(faq.id)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-100 transition-colors"
+                  className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-100 transition-colors"
                 >
-                  <span className="text-lg font-semibold text-gray-900 pr-4">
+                  <span className="text-lg font-semibold text-slate-900 pr-4">
                     {faq.question}
                   </span>
                   <ChevronRight 
                     size={24} 
-                    className={`flex-shrink-0 text-gray-600 transition-transform duration-300 ${
+                    className={`flex-shrink-0 text-slate-600 transition-transform duration-300 ${
                       openFaq === faq.id ? 'rotate-90' : ''
                     }`}
                   />
@@ -277,8 +297,8 @@ const Home = () => {
                     openFaq === faq.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="px-6 pb-5 pt-2">
-                    <p className="text-gray-700 leading-relaxed">
+                  <div className="px-8 pb-6 pt-2">
+                    <p className="text-slate-600 leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>
@@ -287,9 +307,9 @@ const Home = () => {
             ))}
           </div>
 
-          <div className="mt-12 text-center">
-            <p className="text-gray-600 mb-4">Still have questions?</p>
-            <button className="bg-black text-white font-semibold px-8 py-3 rounded-lg hover:bg-gray-800 transition">
+          <div className="mt-16 text-center">
+            <p className="text-slate-600 text-lg mb-6">Still have questions?</p>
+            <button className="bg-slate-900 text-white font-semibold px-10 py-4 rounded-full hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
               Contact Support
             </button>
           </div>
@@ -297,21 +317,26 @@ const Home = () => {
       </div>
 
       {/* === GET IN TOUCH SECTION === */}
-      <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 py-20 px-12 md:px-24">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="bg-slate-900 py-24 px-12 md:px-24 relative overflow-hidden">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Left side - Form */}
             <div>
-              <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Get in Touch!
+              <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+                Get in Touch
               </h2>
-              <p className="text-gray-700 mb-8 text-lg">
+              <p className="text-slate-300 mb-10 text-lg leading-relaxed">
                 Have a project in mind? Let's bring your ideas to life. Fill out the form and we'll get back to you within 24 hours.
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-semibold text-slate-200 mb-2">
                     Name
                   </label>
                   <input
@@ -320,14 +345,13 @@ const Home = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none transition-colors"
+                    className="w-full px-5 py-4 bg-slate-800 border border-slate-700 rounded-xl focus:border-slate-500 focus:outline-none transition-colors text-white placeholder-slate-400"
                     placeholder="Your full name"
-                    required
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-semibold text-slate-200 mb-2">
                     Email
                   </label>
                   <input
@@ -336,14 +360,13 @@ const Home = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none transition-colors"
+                    className="w-full px-5 py-4 bg-slate-800 border border-slate-700 rounded-xl focus:border-slate-500 focus:outline-none transition-colors text-white placeholder-slate-400"
                     placeholder="your.email@example.com"
-                    required
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="phone" className="block text-sm font-semibold text-slate-200 mb-2">
                     Phone Number
                   </label>
                   <input
@@ -352,13 +375,13 @@ const Home = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none transition-colors"
+                    className="w-full px-5 py-4 bg-slate-800 border border-slate-700 rounded-xl focus:border-slate-500 focus:outline-none transition-colors text-white placeholder-slate-400"
                     placeholder="+1 (555) 000-0000"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-semibold text-slate-200 mb-2">
                     Message
                   </label>
                   <textarea
@@ -367,35 +390,34 @@ const Home = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={4}
-                    className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none transition-colors resize-none"
+                    className="w-full px-5 py-4 bg-slate-800 border border-slate-700 rounded-xl focus:border-slate-500 focus:outline-none transition-colors resize-none text-white placeholder-slate-400"
                     placeholder="Tell us about your project..."
-                    required
                   ></textarea>
                 </div>
 
                 <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold px-8 py-4 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-[1.02] shadow-lg"
+                  onClick={handleSubmit}
+                  className="w-full bg-white text-slate-900 font-semibold px-8 py-4 rounded-full hover:bg-slate-100 transition-all transform hover:-translate-y-0.5 shadow-lg"
                 >
                   Send Message
                 </button>
-              </form>
+              </div>
             </div>
 
             {/* Right side - Image */}
             <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-300">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
                 <img
                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800"
                   alt="Happy customer with custom printed products"
-                  className="w-full h-full object-cover"
+                  className="w-full h-[600px] object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
               </div>
               
-              {/* Decorative elements */}
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-purple-400 rounded-full blur-2xl opacity-50"></div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-pink-400 rounded-full blur-2xl opacity-50"></div>
+              {/* Subtle glow effects */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-slate-700 rounded-full blur-3xl opacity-20"></div>
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-slate-700 rounded-full blur-3xl opacity-20"></div>
             </div>
           </div>
         </div>

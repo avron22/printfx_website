@@ -3,7 +3,7 @@ import { useState } from "react";
 import "../styles.css";
 
 export default function Navbar() {
-  const [isModelsOpen, setIsModelsOpen] = useState(false);
+  
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
 
@@ -13,7 +13,6 @@ export default function Navbar() {
     setIsAnimatingOut(true);
     setTimeout(() => {
       setIsMobileOpen(false);
-      setIsModelsOpen(false);
       setIsAnimatingOut(false);
     }, 500);
   };
@@ -39,10 +38,9 @@ export default function Navbar() {
 
 {/* DESKTOP NAV */}
       <nav className="desktopNav hidden! lg:flex! sm:max-xl:gap-6 xl:gap-10! items-center">
-        <NavLink to="/mainboard" className="text-[16px] font-semibold 2xl:text-[24px]" end>MAIN BOARD</NavLink>
-        <NavLink to="/infocus" className="text-[16px] font-semibold 2xl:text-[24px]">INFOCUS</NavLink>     
-
-        <NavLink to="/grwmrr" className="text-[16px] font-semibold 2xl:text-[24px]">GRWMRR</NavLink>
+        <NavLink to="/mainboard" className="text-[16px] font-semibold 2xl:text-[24px]" end>ABOUT US</NavLink>
+        <NavLink to="/infocus" className="text-[16px] font-semibold 2xl:text-[24px]">SERVICES</NavLink>     
+        <NavLink to="/grwmrr" className="text-[16px] font-semibold 2xl:text-[24px]">PRODUCTS</NavLink>
         <NavLink to="/contact" className="text-[16px] font-semibold 2xl:text-[24px]">CONTACT US</NavLink>
       </nav>
 
@@ -61,27 +59,12 @@ export default function Navbar() {
             <button className="absolute top-6 right-6 text-4xl" 
                     onClick={handleClose}>×
             </button>
-            <NavLink to="/mainboard"  className="sm:text-[16px] md:text-[20px] font-semibold 2xl:text-[24px]" end onClick={handleClose}>MAIN BOARD</NavLink>
-            <NavLink to="/infocus"  className="sm:text-[16px] md:text-[20px] font-semibold 2xl:text-[24px]" onClick={handleClose}>INFOCUS</NavLink>
+            <NavLink to="/mainboard"  className="sm:text-[16px] md:text-[20px] font-semibold 2xl:text-[24px]" end onClick={handleClose}>ABOUT US</NavLink>
+            <NavLink to="/infocus"  className="sm:text-[16px] md:text-[20px] font-semibold 2xl:text-[24px]" onClick={handleClose}>SERVICES</NavLink>
 
-            {/* MODELS dropdown */}
-            <div>
-              <div className="flex items-center gap-4 cursor-pointer">
-                <NavLink to="/models"  className="sm:text-[16px] md:text-[20px] font-semibold 2xl:text-[24px]" onClick={handleClose}>MODELS</NavLink>
-                <span className={`transition-transform ${isModelsOpen ? "rotate-180" : ""}`}
-                      onClick={() => setIsModelsOpen(!isModelsOpen)}>▼</span>
-              </div>
+      
 
-              {isModelsOpen && (
-                <div className="flex flex-col ml-4 gap-2 mt-2">
-                  <NavLink to="/models/kids" className="sm:text-[16px] md:text-[20px] font-semibold 2xl:text-[24px]" onClick={handleClose}>Kids</NavLink>
-                  <NavLink to="/models/teens" className="sm:text-[16px] md:text-[20px] font-semibold 2xl:text-[24px]" onClick={handleClose}>Teens</NavLink>
-                  <NavLink to="/models/thai" className="sm:text-[16px] md:text-[20px] font-semibold 2xl:text-[24px]" onClick={handleClose}>Thai</NavLink>
-                </div>
-              )}
-            </div>
-
-            <NavLink to="/grwmrr" className="sm:text-[16px] md:text-[20px] font-semibold 2xl:text-[24px]" onClick={handleClose}>GRWMRR</NavLink>
+            <NavLink to="/grwmrr" className="sm:text-[16px] md:text-[20px] font-semibold 2xl:text-[24px]" onClick={handleClose}>PRODUCTS</NavLink>
             <NavLink to="/contact" className="sm:text-[16px] md:text-[20px] font-semibold 2xl:text-[24px]" onClick={handleClose}>CONTACT US</NavLink>
             
             {/*site logo mobile */}
