@@ -29,7 +29,7 @@ const features = [
   { icon: Rocket, title: "Fast Turnaround", description: "Quick delivery without sacrificing excellence" }
 ];
 
-export default function Mainboard() {
+export default function Aboutus() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [formData, setFormData] = useState({

@@ -61,9 +61,6 @@ export default function Navbar() {
             </button>
             <NavLink to="/mainboard"  className="sm:text-[16px] md:text-[20px] font-semibold 2xl:text-[24px]" end onClick={handleClose}>ABOUT US</NavLink>
             <NavLink to="/infocus"  className="sm:text-[16px] md:text-[20px] font-semibold 2xl:text-[24px]" onClick={handleClose}>SERVICES</NavLink>
-
-      
-
             <NavLink to="/grwmrr" className="sm:text-[16px] md:text-[20px] font-semibold 2xl:text-[24px]" onClick={handleClose}>PRODUCTS</NavLink>
             <NavLink to="/contact" className="sm:text-[16px] md:text-[20px] font-semibold 2xl:text-[24px]" onClick={handleClose}>CONTACT US</NavLink>
             
