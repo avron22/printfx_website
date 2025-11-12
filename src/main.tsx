@@ -3,10 +3,10 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.tsx";
 import Home from "./pages/Home.tsx";
-import Infocus from "./pages/Infocus.tsx"; 
-import GRWMRR from "./pages/GRWMRR.tsx";
+import Infocus from "./pages/Services.tsx"; 
+import GRWMRR from "./pages/Products.tsx";
 import Contact from "./pages/Contact.tsx";
-import Mainboard from "./pages/Mainboard.tsx";
+import Mainboard from "./pages/Aboutus.tsx";
 import "./styles.css";
 
 
