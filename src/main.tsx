@@ -3,10 +3,10 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.tsx";
 import Home from "./pages/Home.tsx";
-import Infocus from "./pages/Services.tsx"; 
-import GRWMRR from "./pages/Products.tsx";
+import Services from "./pages/Services.tsx"; 
+import Products from "./pages/Products.tsx";
 import Contact from "./pages/Contact.tsx";
-import Mainboard from "./pages/Aboutus.tsx";
+import Aboutus from "./pages/Aboutus.tsx";
 import "./styles.css";
 
 
@@ -16,10 +16,9 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <Home /> },
-      { path: "mainboard", element: <Mainboard /> },
-      { path: "infocus", element: <Infocus />},
-      
-      { path: "grwmrr", element: <GRWMRR /> },
+      { path: "aboutus", element: <Aboutus /> },
+      { path: "services", element: <Services />},
+      { path: "products", element: <Products /> },
       { path: "contact", element: <Contact /> }
       
     ],
