@@ -63,7 +63,7 @@ export default function Mainboard(): React.ReactElement {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pt-20">
       {/* Our Services Section */}
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-br from-slate-50 via-white to-slate-50">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">

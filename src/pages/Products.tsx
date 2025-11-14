@@ -26,7 +26,7 @@ export default function GRWMRR(): React.ReactElement {
   const [hoveredId, setHoveredId] = React.useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 pt-24">
       {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -34,7 +34,7 @@ export default function GRWMRR(): React.ReactElement {
         <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-pink-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24 relative z-10">
+      <div className="container mx-auto px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20 lg:py-24 relative z-10">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16 md:mb-20">
           <div className="inline-block mb-4 sm:mb-6 px-4 sm:px-6 py-1.5 sm:py-2 bg-gradient-to-r from-sky-500/20 to-purple-500/20 rounded-full border border-sky-500/30 backdrop-blur-sm">
@@ -47,7 +47,7 @@ export default function GRWMRR(): React.ReactElement {
             </h1>
             <Star className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 fill-pink-400 text-pink-400 animate-pulse" />
           </div>
-          <p className="text-slate-300 text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-slate-300 text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
             Discover our comprehensive range of premium printing and signage solutions designed to elevate your brand to new heights
           </p>
         </div>
@@ -70,7 +70,7 @@ export default function GRWMRR(): React.ReactElement {
 
         {/* Products Grid */}
         <div className="mb-12 sm:mb-16 md:mb-20">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-8 sm:mb-10 md:mb-12 px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-8 sm:mb-10 md:mb-12">
             Featured <span className="bg-gradient-to-r from-sky-400 to-purple-400 bg-clip-text text-transparent">Collections</span>
           </h2>
           <div className="grid grid-cols-1 min-[480px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8 max-w-7xl mx-auto">
@@ -131,7 +131,7 @@ export default function GRWMRR(): React.ReactElement {
 
         {/* Why Choose Us Section */}
         <div className="mb-12 sm:mb-16 md:mb-20 max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-8 sm:mb-10 md:mb-12 px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-8 sm:mb-10 md:mb-12">
             Why Choose <span className="bg-gradient-to-r from-sky-400 to-purple-400 bg-clip-text text-transparent">Our Services</span>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
@@ -163,7 +163,7 @@ export default function GRWMRR(): React.ReactElement {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center px-4">
+        <div className="text-center">
           <div className="inline-block bg-white/5 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 border border-white/10 w-full max-w-4xl">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
               Ready to Get Started?
